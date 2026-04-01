@@ -1,5 +1,3 @@
-import Header            from '@/components/layout/Header'
-import Footer            from '@/components/layout/Footer'
 import HeroSection       from '@/components/sections/HeroSection'
 import TrustBar          from '@/components/sections/TrustBar'
 import FeaturedCategories from '@/components/sections/FeaturedCategories'
@@ -9,17 +7,13 @@ import NewsletterSection from '@/components/sections/NewsletterSection'
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main>
-        <HeroSection />
-        <FeaturedCategories />
-        <TrustBar />
-        <BestSellers />
-        <PromoBanner />
-        <NewsletterSection />
-      </main>
-      <Footer />
-    </>
+    <main>
+      <HeroSection />
+      <FeaturedCategories />
+      <TrustBar />
+      <BestSellers />
+      <PromoBanner />
+      <NewsletterSection />
+    </main>
   )
 }

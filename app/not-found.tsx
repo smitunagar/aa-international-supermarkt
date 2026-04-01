@@ -1,21 +1,8 @@
 import Link from 'next/link'
-import { Leaf } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-warm-50 flex flex-col">
-      {/* Simple header */}
-      <header className="px-6 py-5 border-b border-warm-200 bg-white">
-        <Link href="/" className="flex items-center gap-2 w-fit">
-          <div className="w-8 h-8 rounded-lg bg-forest-700 flex items-center justify-center">
-            <Leaf className="w-4 h-4 text-white" />
-          </div>
-          <span className="font-display font-bold text-lg text-forest-800 leading-none">
-            A&amp;A<br />
-            <span className="text-xs font-normal text-stone-500 tracking-wide">SUPERMARKT</span>
-          </span>
-        </Link>
-      </header>
+    <div className="min-h-[70vh] bg-warm-50 flex flex-col">
 
       {/* Main content */}
       <main className="flex-1 flex flex-col items-center justify-center px-4 text-center">
@@ -74,11 +61,6 @@ export default function NotFound() {
           ))}
         </div>
       </main>
-
-      {/* Footer strip */}
-      <footer className="py-5 px-6 border-t border-warm-200 text-center text-xs text-stone-400">
-        © {new Date().getFullYear()} A&amp;A International Supermarkt · Frankfurt am Main
-      </footer>
     </div>
   )
 }

@@ -2,8 +2,6 @@ import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { products } from '@/data/products'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
 import ProductGallery from '@/components/product/ProductGallery'
 import ProductInfo from '@/components/product/ProductInfo'
 import ProductCard from '@/components/ui/ProductCard'
@@ -41,8 +39,6 @@ export default function ProductPage({ params }: Props) {
 
   return (
     <>
-      <Header />
-
       <main className="bg-warm-50 min-h-screen">
 
         {/* ── Breadcrumb ── */}
@@ -119,8 +115,6 @@ export default function ProductPage({ params }: Props) {
         )}
 
       </main>
-
-      <Footer />
     </>
   )
 }

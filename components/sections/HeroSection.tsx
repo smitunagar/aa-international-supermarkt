@@ -8,6 +8,7 @@ import { ArrowRight, ChevronLeft, ChevronRight, ShoppingBag } from 'lucide-react
 /* ─────────────────────────────────────────────────────────────────────────────
    Slide types:
      'fullbleed' – image fills the entire banner; text overlaid on a gradient
+     'imageonly' – pure full-bleed image, zero text/overlay
      'split'     – text left, image right (two-column card style)
 ───────────────────────────────────────────────────────────────────────────── */
 type FullbleedSlide = {
@@ -22,10 +23,16 @@ type FullbleedSlide = {
   badgeColor: string
   image: string
   imageAlt: string
-  /** Which side the text panel sits on */
   textSide: 'left' | 'right'
-  /** Tailwind gradient for the text-side veil */
   overlay: string
+  dot: string
+}
+
+type ImageOnlySlide = {
+  id: number
+  type: 'imageonly'
+  image: string
+  imageAlt: string
   dot: string
 }
 
@@ -47,7 +54,7 @@ type SplitSlide = {
   dot: string
 }
 
-type Slide = FullbleedSlide | SplitSlide
+type Slide = FullbleedSlide | ImageOnlySlide | SplitSlide
 
 const slides: Slide[] = [
   // ── Slide 1 — full-bleed custom banner ───────────────────────────────────
@@ -67,23 +74,13 @@ const slides: Slide[] = [
     overlay: 'bg-gradient-to-r from-black/70 via-black/40 to-transparent',
     dot: 'bg-amber-400',
   },
-  // ── Slide 2 — split ──────────────────────────────────────────────────────
+  // ── Slide 2 — pure image banner (no text) ────────────────────────────────
   {
     id: 2,
-    type: 'split',
-    tag: '🍚 Bestseller',
-    headline: 'Premium Basmati\nRice & Grains',
-    subtext: 'Long-grain, aged basmati sourced from the finest mills in India',
-    cta: 'Shop Rice',
-    ctaHref: '/categories/rice-grains',
-    badge: 'Free delivery over €50',
-    badgeColor: 'bg-forest-600',
-    image: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?w=900&q=80&auto=format&fit=crop',
-    imageAlt: 'Premium basmati rice',
-    bgFrom: 'from-green-50',
-    bgTo:   'to-emerald-50',
-    accent: 'text-forest-700',
-    dot:    'bg-forest-600',
+    type: 'imageonly',
+    image: '/hero-banner-2.png',
+    imageAlt: 'A&A International Supermarkt seasonal collection',
+    dot: 'bg-[#BC6426]',
   },
   // ── Slide 3 — split ──────────────────────────────────────────────────────
   {
@@ -98,10 +95,10 @@ const slides: Slide[] = [
     badgeColor: 'bg-saffron-500',
     image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=900&q=80&auto=format&fit=crop',
     imageAlt: 'Assorted beverages and drinks',
-    bgFrom: 'from-orange-50',
-    bgTo:   'to-yellow-50',
-    accent: 'text-saffron-600',
-    dot:    'bg-saffron-500',
+    bgFrom: 'from-warm-50',
+    bgTo:   'to-warm-100',
+    accent: 'text-forest-700',
+    dot:    'bg-forest-600',
   },
 ]
 
@@ -126,6 +123,23 @@ export default function HeroSection() {
 
   return (
     <div className="relative">
+
+      {/* ════════════════════════════════════════════════
+          IMAGE-ONLY slide (slide 2) — pure banner, no text
+      ════════════════════════════════════════════════ */}
+      {slide.type === 'imageonly' && (
+        <section className="relative w-full overflow-hidden h-[320px] sm:h-[400px] md:h-[440px] lg:h-[480px] xl:h-[520px]">
+          <Image
+            key={slide.id}
+            src={slide.image}
+            alt={slide.imageAlt}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </section>
+      )}
 
       {/* ════════════════════════════════════════════════
           FULLBLEED slide (slide 1)

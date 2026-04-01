@@ -4,8 +4,8 @@
 
 /* ── Root variables ── */
 :root {
-  --background: #FAF8F4;
-  --foreground: #1C1917;
+  --background: #FDFAF4;
+  --foreground: #1C1410;
 }
 
 /* ── Base resets ── */
@@ -29,13 +29,13 @@ body {
 
 /* ── Selection ── */
 ::selection {
-  background: #e07c3940;
-  color: #1C1917;
+  background: #bc642640;
+  color: #1C1410;
 }
 
 /* ── Focus rings ── */
 :focus-visible {
-  outline: 2px solid #1B6B43;
+  outline: 2px solid #BC6426;
   outline-offset: 2px;
 }
 
@@ -45,14 +45,14 @@ body {
   height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F0E8;
+  background: #F7EEE1;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C4B89D;
+  background: #D2A882;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1B6B43;
+  background: #BC6426;
 }
 
 /* ── Smooth image loading ── */
@@ -73,7 +73,7 @@ img {
 }
 
 .skeleton {
-  background: linear-gradient(90deg, #F5F0E8 25%, #EDE5D6 50%, #F5F0E8 75%);
+  background: linear-gradient(90deg, #F7EEE1 25%, #EDD9C4 50%, #F7EEE1 75%);
   background-size: 200% 100%;
   animation: shimmer 1.4s ease-in-out infinite;
 }

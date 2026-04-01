@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Search, ShoppingCart, Heart, User, Menu, X, Leaf } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -63,19 +64,15 @@ export default function Header() {
           <div className="flex items-center justify-between h-16 lg:h-20 gap-4">
 
             {/* ── Logo ── */}
-            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <div className="relative w-9 h-9 rounded-xl bg-forest-700 flex items-center justify-center shadow-sm">
-                <Leaf className="w-5 h-5 text-saffron-400 absolute opacity-30" />
-                <span className="text-white text-[11px] font-bold tracking-tight relative z-10">A&A</span>
-              </div>
-              <div className="hidden sm:block">
-                <div className="font-display text-[17px] font-bold text-stone-900 leading-tight">
-                  A&A International
-                </div>
-                <div className="text-[10px] text-stone-400 tracking-[0.18em] uppercase font-medium">
-                  Supermarkt
-                </div>
-              </div>
+            <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+              <Image
+                src="/logo.jpeg"
+                alt="A&A International Supermarkt"
+                width={160}
+                height={56}
+                className="h-11 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* ── Search – Desktop ── */}

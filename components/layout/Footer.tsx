@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Instagram, Facebook, Youtube, Mail, Phone, MapPin, Leaf } from 'lucide-react'
 
 const footerLinks = {
@@ -45,19 +46,14 @@ export default function Footer() {
 
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="relative w-9 h-9 rounded-xl bg-forest-700 flex items-center justify-center">
-                <Leaf className="w-5 h-5 text-saffron-400 absolute opacity-30" />
-                <span className="text-white text-[11px] font-bold tracking-tight relative z-10">A&A</span>
-              </div>
-              <div>
-                <div className="font-display text-base font-bold text-white leading-tight">
-                  A&A International
-                </div>
-                <div className="text-[10px] text-stone-400 tracking-[0.18em] uppercase font-medium">
-                  Supermarkt
-                </div>
-              </div>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo.jpeg"
+                alt="A&A International Supermarkt"
+                width={160}
+                height={56}
+                className="h-12 w-auto object-contain brightness-0 invert"
+              />
             </Link>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-xs">

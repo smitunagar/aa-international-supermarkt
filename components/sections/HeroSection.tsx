@@ -10,8 +10,8 @@ export default function HeroSection() {
       {/* ── Background Image ── */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1600&q=85&auto=format&fit=crop"
-          alt="Colourful Indian spices and produce"
+          src="/hero-shop.jpeg"
+          alt="A&A International Supermarkt — Frankfurt am Main"
           fill
           priority
           sizes="100vw"
